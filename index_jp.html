@@ -24,6 +24,7 @@
     <meta name="description" content="位於台中市龍井區新興路,個人,家庭可安心放鬆滿腹的餐飲店">
     <title>英ちゃんの店 営業時間,メニュー確認 台中食堂 レストラン 犁清絲路</title>
   <link href="menu.css" rel="stylesheet" type="text/css">
+  <link href="moji.css" rel="stylesheet" type="text/css">
   </head>
 
   <script type="text/javascript" src='rinji.js?v=343'></script>
@@ -43,7 +44,7 @@ function ShowTime(){
   makeRequest('yasumi.txt');
   var rijio =new Number(temp);
 //　document.getElementById('showbox').innerHTML ='<p align="center">' h+'時'+m+'分'+s+'秒 </p>';
-　document.getElementById('showbox').innerHTML ='<div align="center"><span style="font-size: 11pt; background-color:#FFFFFF"><span style="font-size: 16pt; background-color:#FFFFFF">目前時間 : '+h+'時'+m+'分'+' </span></div>';
+　document.getElementById('showbox').innerHTML ='<div class="fuchidori"><span style="font-size: 22pt">現在時間 : '+h+'時'+m+'分'+' </span></div>';
 //  document.getElementById('kyouha').innerHTML = '<br></br>今天是' + youbi ;
 //  document.getElementById('rijioyou').innerHTML ='Showtime = ' + rijio;
 //  alert(rijio);
@@ -51,37 +52,37 @@ function ShowTime(){
   if ( rijio == 10 ) {
     document.getElementById('eigyou').innerHTML = '<p align="center"><img src="iconcheck01.png" alt="確認中..." title="確認中..."></p>';
   } else if ( rijio == 0 ) {
-    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">營業&#29376;況 : <img src="iconempty02.png" alt="上午已售完" title="上午已售完"></span></p>';
+    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt">營業&#29376;況 : <img src="iconempty02.png" alt="上午已售完" title="上午已售完"></span></p>';
   } else if ( rijio == 1 ) {
-    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">營業&#29376;況 : <img src="iconempty01.png" alt="本日已售完" title="本日已售完"></span></p>';
+    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt">營業&#29376;況 : <img src="iconempty01.png" alt="本日已售完" title="本日已售完"></span></p>';
   } else if ( rijio == 2 ) {
-    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">營業&#29376;況 : 本日開店中</span></p>';
+    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt">營業&#29376;況 : 本日開店中</span></p>';
   } else if ( rijio == 3 ) {
-    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">營業&#29376;況 : <img src="iconfull01.png" alt="目前客滿中" title="目前客滿中"></span></p>';
+    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt">營業&#29376;況 : <img src="iconfull01.png" alt="目前客滿中" title="目前客滿中"></span></p>';
   } else if ( rijio == 4 ) {
-    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">營業&#29376;況 : 臨時休業</span></p>';
+    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt">營業&#29376;況 : 臨時休業</span></p>';
   } else if ( rijio == 5 ) {                                                // "6" 為正常營業
-    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">營業&#29376;況 : <img src="icondown01.png" alt="休息準備中" title="休息準備中"></span></p>';
+    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt">營業&#29376;況 : <img src="icondown01.png" alt="休息準備中" title="休息準備中"></span></p>';
   } 
 //  	else if ( (youbi==2) && ( ((h*60+m)<960) || ((h*60+m)>1200) ) ) {
-//    	document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">營業&#29376;況 : <img src="iconyoubi02.png" alt="本日上午休息" title="本日上午休息"></span></p>';
+//    	document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt">營業&#29376;況 : <img src="iconyoubi02.png" alt="本日上午休息" title="本日上午休息"></span></p>';
 //  }
 //  else if ( (youbi==2) ) {
-//    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">營業&#29376;況 : <img src="icondown01.png" alt="休息準備中" title="休息準備中"></span></p>';
+//    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt">營業&#29376;況 : <img src="icondown01.png" alt="休息準備中" title="休息準備中"></span></p>';
 //   }
    else if ( (( (h*60+m) < 660 ) || ( (h*60+m) >= 1260)) ) {
-    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">營業&#29376;況 : <img src="icondown01.png" alt="休息準備中" title="休息準備中"></span></p>';
+    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt">營業&#29376;況 : <img src="icondown01.png" alt="休息準備中" title="休息準備中"></span></p>';
   } else if ( (( (h*60+m) < 960 ) && ( (h*60+m) >= 840)) ) {
-    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">營業&#29376;況 : <img src="icondown01.png" alt="休息準備中" title="休息準備中"></span></p>';
+    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt">營業&#29376;況 : <img src="icondown01.png" alt="休息準備中" title="休息準備中"></span></p>';
   } else if ( (( ( h*60+m ) < 840 ) && ( ( h*60+m ) >= 660 )) ) {
-    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">營業&#29376;況 : <img src="iconup01.png" alt="營業中" title="營業中"></span></p>';
+    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt">營業&#29376;況 : <img src="iconup01.png" alt="營業中" title="營業中"></span></p>';
   } else if ( (( ( h*60+m ) < 1260 ) && ( ( h*60+m ) >= 960 )) ){
-    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">營業&#29376;況 : <img src="iconup01.png" alt="營業中" title="營業中"></span></p>';
+    document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt">營業&#29376;況 : <img src="iconup01.png" alt="營業中" title="營業中"></span></p>';
   }
 //   else if ( (( ( h*60+m ) < 990) && ( ( h*60+m ) >= 870)) ) {
-//   document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">營業&#29376;況 : <img src="icondown01.png" alt="休息準備中" title="休息準備中"></span></p>';
+//   document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt">營業&#29376;況 : <img src="icondown01.png" alt="休息準備中" title="休息準備中"></span></p>';
 //  } else if ( (( ( h*60+m ) < 870) && ( ( h*60+m ) >= 600)) ) {
-//   document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">營業&#29376;況 : <img src="iconup01.png" alt="營業中" title="營業中"></span></p>';
+//   document.getElementById('eigyou').innerHTML = '<p align="center"><span style="font-size: 16pt">營業&#29376;況 : <img src="iconup01.png" alt="營業中" title="營業中"></span></p>';
 //}
   
   setTimeout('ShowTime()',1500);
@@ -100,10 +101,10 @@ function ShowTime(){
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
   
-<p align="center"><b><font face="微軟正黑體" style="font-size: 28pt">
+<p class="fuchidori"><b><font face="微軟正黑體" style="font-size: 28pt">
 <span style="background-color: #FFFFFF"><span lang="ja">英ちゃんの店</span></span></font></b></p>
-<p align="center"><span style="background-color: #FFFFFF">
-<font face="微軟正黑體" style="font-size: 16pt"><a href="index.html">中文版</a></font></span></p>
+<p class="superURL">
+<font face="微軟正黑體" style="font-size: 16pt"><a href="index.html">中文版</a></font></p>
 	
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9566155599984981"
      crossorigin="anonymous"></script>
@@ -140,72 +141,77 @@ function ShowTime(){
 <div align="center" id="eigyou"></div>
 <p align="center"><a href="zentate_jp.html"><img src="icon\iconzentate02_jp.png" alt="メニューはこちら" title="メニューはこちら"></a></p>
 
-	
-<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">
+	<div class="fuchidori">
+<p align="center"><span style="font-size: 22pt">
 <font color="#FF0000" face="微軟正黑體"><b>
-<font color="#FF0000">NEW!!</font></b></font>&nbsp;</span> <b>
-<span style="font-size: 16pt; background-color:#FFFFFF">2023/01/18 
+<font color="#FF0000">NEW!!</font></b></font>&nbsp; </span> <b>
+<span style="font-size: 22pt">2023/01/18 
 <span lang="ja">今年大晦日は初三まで休みます！</span>(1/20~1/24)</span></b></p>
 <p align="center">
-<span style="font-size: 16pt; font-weight: 700; background-color: #FFFFFF">
+<span style="font-size: 22pt; font-weight: 700">
 <font face="微軟正黑體">
 2022/06/19 <span lang="ja">メニュー更新！</span><a href="zentate_jp.html">詳しくはここ</a></font></span></p>
 	
 	
-<p align="center"><span style="background-color: #FFFFFF"><b>
-<font face="微軟正黑體" style="font-size: 16pt">2019/11/02</font><font face="微軟正黑體" style="font-size: 16pt" color="#FF0000">
-</font><font face="微軟正黑體" style="font-size: 16pt"><span lang="ja-jp">新しいデザート登場！
-オニオンリング！</span></font></b></span></p>
+<p align="center"><b>
+<font face="微軟正黑體" style="font-size: 22pt">2019/11/02</font><font face="微軟正黑體" style="font-size: 22pt" color="#FF0000">
+</font><font face="微軟正黑體" style="font-size: 22pt"><span lang="ja-jp">新しいデザート登場！
+オニオンリング！</span></font></b></p>
 <p align="center"><a href="chizu1_jp.html">
 <font face="微軟正黑體">
-<span style="font-size: 16pt; font-weight: 700; background-color: #FFFFFF">
+
+<span style="font-size: 22pt; font-weight: 700">
 	2019/07/07 店舗オープン！本店は引っ越しを完了しました！</span></font></a></p>
 <p align="center">　</p>
-<p align="center"><span style="font-size: 16pt; font-weight: 700; background-color: #FFFFFF">冷房オンしています！</span></p>
+<p align="center"><span style="font-size: 22pt; font-weight: 700">冷房オンしています！</span></p>
 <p id="eigyoutime" align="center">　</p>
-<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">本店の営業時間 : </span></p>
-<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">朝 AM 11:00 ~ 
+<p align="center"><span style="font-size: 22pt">本店の営業時間 : </span></p>
+<p align="center"><span style="font-size: 22pt">朝 AM 11:00 ~ 
 午後 PM 0<span lang="ja-jp">2</span>:<span lang="ja-jp">0</span>0</span></p>
 <p align="center">
-<span style="font-size: 16pt; background-color: #FFFFFF">午後</span><span style="font-size: 16pt; background-color: #FFFFFF" lang="ja-jp"> 
+<span style="font-size: 22pt;">午後</span><span style="font-size: 22pt;" lang="ja-jp"> 
 PM 04:00 ~ </span>
-<span style="font-size: 16pt; background-color: #FFFFFF">夜</span><span style="font-size: 16pt; background-color: #FFFFFF" lang="ja-jp"> PM 09:00</span></p>
+<span style="font-size: 22pt;">夜</span><span style="font-size: 22pt;" lang="ja-jp"> PM 09:00</span></p>
+	</div>
 <p align="center"><font color="#FFFFFF">
-<span style="font-size: 16pt; background-color:#000000">※</span></font><span style="background-color: #000000"><font color="#FFFFFF"><span style="font-size: 16pt">完売まで</span></font></span></p>
+<span style="font-size: 22pt; background-color:#000000">※</span></font><span style="background-color: #000000"><font color="#FFFFFF"><span style="font-size: 22pt">完売まで</span></font></span></p>
 <p align="center">　</p>
-<p align="center"><span style="font-size: 16pt; background-color: #FFFFFF">
+	<div class="fuchidori">
+<p align="center"><span style="font-size: 22pt;">
 私のオークション！中には３Cの品と古いゲーム機！よろしければ見ていてください！</span></p>
-<p align="center"><span style="font-size: 16pt; background-color: #FFFFFF">
+<p align="center"><span style="font-size: 22pt;">
 <a href="https://www.ruten.com.tw/store/watatatamarukaita32/">
 https://www.ruten.com.tw/store/watatatamarukaita32/</a></span></p>
   
 
-<span style="font-size: 16pt">
+<span style="font-size: 22pt">
 <br><br/>
 </span>
-<p id="way" align="center"><span style="font-size: 16pt; background-color:#FFFFFF">台中市 龍井區 新興路 20 巷 6 號</span></p>
-<p align="center"><span style="font-size: 16pt; background-color: #FFFFFF">
+<p id="way" align="center"><span style="font-size: 22pt">台中市 龍井區 新興路 20 巷 6 號</span></p>
+<p align="center"><span style="font-size: 22pt;">
 <a href="chizu1_jp.html">でかい地図＆駐車場情報</a></span></p>
-
+	</div>
+		
 <p align="center">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.726067934777!2d120.58797699942187!3d24.18133796678984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346915f8b0a20905%3A0x180b6e9bc56d3892!2z5bCP6Iux55qE5bqXIOmkkOW7syDpo5_loIIg5ZKW5ZWh5bqXIOeKgea4hee1sui3rw!5e0!3m2!1sja-jp!2stw!4v1562475714821!5m2!1sja-jp!2stw" width=80% height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 </p>
 <p align="center">
 <font color="#FFFFFF"><span style="background-color: #000000" lang="ja">※</span><span style="background-color: #000000">地図をクリックすると説明を小さくできる</span></font></p>
 
-<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">※ 康是美
+	<div class="fuchidori">
+<p align="center"><span style="font-size: 22pt">※ 康是美
 右手の路地内にいます</span></p>
 <p id="phone" align="center">　</p>
-<p align="center"><span style="font-size: 16pt; background-color: #FFFFFF">電話</span><span style="font-size: 16pt; background-color:#FFFFFF">(TEL) : 04-2631-7940 ; 0930-713-326</span></p>
+<p align="center"><span style="font-size: 22pt;">電話(TEL) : 04-2631-7940 ; 0930-713-326</span></p>
 <p align="center">　</p>
 <p id="sns" align="center">
-<span style="font-size: 16pt; background-color:#FFFFFF">Plurk :
+<span style="font-size: 22pt">Plurk :
 <a href="https://www.plurk.com/syaoindeden">https://www.plurk.com/syaoindeden</a></span></p>
-<p align="center"><span style="font-size: 16pt; background-color:#FFFFFF">Twitter :
+<p align="center"><span style="font-size: 22pt">Twitter :
 <a href="https://twitter.com/syaoindeden2">https://twitter.com/syaoindeden2</a></span></p>
 <p id="youtube" align="center">　</p>
 <p align="center">　</p>
-<p align="center"><span style="font-size: 16pt; background-color: #FFFFFF">
+<p align="center"><span style="font-size: 22pt;">
 Youtub<span lang="ja-jp">e</span>チャンネル<span lang="ja-jp"> :
 <a href="https://www.youtube.com/channel/UC_V7wO5cnn5QZ8XHrZEWY8g">
 https://www.youtube.com/channel/UC_V7wO5cnn5QZ8XHrZEWY8g</a></span></span></p>
@@ -216,16 +222,17 @@ https://www.youtube.com/channel/UC_V7wO5cnn5QZ8XHrZEWY8g</a></span></span></p>
 <br>
 </p>
 <p id="qrcode" align="center">
-<span style="font-size: 16pt; background-color: #FFFFFF">本店</span><span style="font-size: 16pt; background-color:#FFFFFF">のURL&amp;QRコード</span></p>
+<span style="font-size: 22pt;">本店のURL&amp;QRコード</span></p>
 <p align="center"><a href="https://hoimasami.github.io/index_jp.html">
-<span style="font-size: 16pt; background-color:#FFFFFF">https://hoimasami.github.io/index_jp.html</span></a></p>
+<span style="font-size: 22pt">https://hoimasami.github.io/index_jp.html</span></a></p>
 <p align="center">
 <img border="0" src="QRCODE_jp.png" width="154" height="153"></p>
 
 <br><br/>
 <br><br/>
 <br><br/>
-
+</div>
+															
 </body>
 
 <!-- 
